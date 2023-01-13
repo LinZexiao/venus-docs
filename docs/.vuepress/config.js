@@ -111,6 +111,7 @@ module.exports = {
                         collapsable: false,
                         children: [
                             ['', 'Overview'],
+                            ['one-pager.md', 'One Pager']
                         ]
                     },
                     {
@@ -231,15 +232,9 @@ module.exports = {
                         title: 'Local Component',
                         collapsable: false,
                         children: [
+                            ['venus-market.md', 'venus-market'],
                             ['venus-cluster.md', 'venus-cluster'],
                             ['venus-wallet.md', 'venus-wallet (remote)'],
-                        ]
-                    },
-                    {
-                        title: 'Hybrid Component',
-                        collapsable: false,
-                        children: [
-                            ['venus-market.md', 'venus-market'],
                         ]
                     },
                     ],
@@ -265,6 +260,19 @@ module.exports = {
 
                         ]
                     },
+                    {
+                        title: 'RPC API Reference',
+                        collapsable: false,
+                        children: [
+                            ['chain-api-v0.md', 'Chain api v0', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/chain/v0/method.md"],
+                            ['chain-api-v1.md', 'Chain api v1', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/chain/v1/method.md"],
+                            ['gateway-api-v0.md', 'Gateway api v0', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/gateway/v0/method.md"],
+                            ['gateway-api-v1.md', 'Gateway api v1', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/gateway/v1/method.md"],
+                            ['market-api.md', 'Market api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/market/method.md"],
+                            ['messager-api.md', 'Messager api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/messager/method.md"],
+                            ['wallet-api.md', 'Wallet api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/wallet/method.md"]
+                        ]
+                    },
                     ],
                     '/operation/': [{
                         title: 'Operation',
@@ -281,8 +289,9 @@ module.exports = {
                         title: 'Upgrade',
                         collapsable: false,
                         children: [
-                            ['nv15-upgrade.md', 'nv15 upgrade'],
+                            ['nv17-upgrade.md', 'nv17 upgrade'],
                             ['nv16-upgrade.md', 'nv16 upgrade'],
+                            ['nv15-upgrade.md', 'nv15 upgrade'],
                         ]
                     },
                     ],
@@ -333,13 +342,19 @@ module.exports = {
                     text: '运维',
                     link: '/zh/operation/'
                 },
+                {
+                    text: '研究',
+                    link: '/zh/research/'
+                },
                 ],
                 sidebar: {
                     '/zh/intro/': [{
-                        title: '简述',
+                        title: '概述',
                         collapsable: false,
                         children: [
                             ['', '启明星概要'],
+                            ['one-pager.md', '单页介绍文档'],
+
                         ]
                     },
                     {
@@ -477,12 +492,6 @@ module.exports = {
                         children: [
                             ['venus-cluster.md', 'venus-cluster'],
                             ['venus-wallet.md', 'venus-wallet（远程）'],
-                        ]
-                    },
-                    {
-                        title: '混合组件',
-                        collapsable: false,
-                        children: [
                             ['venus-market.md', 'venus-market'],
                         ]
                     },
@@ -517,6 +526,19 @@ module.exports = {
 
                         ]
                     },
+                    {
+                        title: 'RPC 接口参考',
+                        collapsable: false,
+                        children: [
+                            ['chain-api-v0.md', 'Chain api v0', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/chain/v0/method.md"],
+                            ['chain-api-v1.md', 'Chain api v1', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/chain/v1/method.md"],
+                            ['gateway-api-v0.md', 'Gateway api v0', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/gateway/v0/method.md"],
+                            ['gateway-api-v1.md', 'Gateway api v1', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/gateway/v1/method.md"],
+                            ['market-api.md', 'Market api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/market/method.md"],
+                            ['messager-api.md', 'Messager api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/messager/method.md"],
+                            ['wallet-api.md', 'Wallet api', "https://github.com/filecoin-project/venus/blob/master/venus-shared/api/wallet/method.md"]
+                        ]
+                    },
                     ],
                     '/zh/operation/': [{
                         title: '运维实战',
@@ -533,24 +555,46 @@ module.exports = {
                         title: '网络/组件升级',
                         collapsable: false,
                         children: [
-                            ['nv15-upgrade.md', 'nv15网络升级'],
+                            ['nv17-upgrade.md', 'nv17网络升级'],
                             ['nv16-upgrade.md', 'nv16网络升级'],
+                            ['nv15-upgrade.md', 'nv15网络升级'],
                             ['migrate_market_v1_to_v2.md', 'market_v2升级'],
                         ]
                     },
                     ],
-                    '/zh/master/': [{
-                        title: '大师课',
+                    '/zh/research/': [{
+                        title: 'Venus生态研究',
                         collapsable: false,
                         children: [
-                            ['', '目录'],
-                            ['Intro_to_Venus.md', 'Venus概要'],
-                            ['Chain_service_construction.md', '部署/加入链服务'],
-                            ['Daily_op_and_maintenance.md', '节点日常运维'],
-                            ['Q&A.md', 'Q&A'],
-                            ['Incubation_exit_guide.md', '节点迁出指南'],
+                            ['', '概述'],
                         ]
-                    }]
+                    },
+                    {
+                        title: 'FIP解读',
+                        collapsable: false,
+                        children: [
+                            ['fip0045.md', 'FIP0045'],
+                            ['fip0034.md', 'FIP0034'],
+                        ]
+                    },
+                    {
+                        title: '设计方案',
+                        collapsable: false,
+                        children: [
+                            ['market-attributes-self-config.md', '市场的交易属性配置'],
+                            ['impl-mk-1.2.0.md', '集成Boost协议'],
+                            ['metrics-design.md', 'Metrics指标'],
+                            ['saas.md', 'SaaS'],
+                        ]
+                    },
+                    {
+                        title: '其他解读',
+                        collapsable: false,
+                        children: [
+                            ['boost-protocol-research.md', 'Boost协议解读'],
+                        ]
+                    },
+                    ]
                 }
             }
         }

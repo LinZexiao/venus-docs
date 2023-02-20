@@ -1,7 +1,13 @@
 #!/bin/sh
 
+# venus.Version >= 1.11.0
+
 echo "Arg: $@"
 Args=" --auth-url=http://127.0.0.1:8989 "
+
+token=$(cat /env/token )
+
+Args="$Args --auth-token=$token"
 
 if [ $nettype ]
 then
